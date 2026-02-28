@@ -9,7 +9,7 @@
 
 **A minimal, editorial-style personal portfolio built with pure HTML, CSS & JavaScript. No frameworks. No dependencies. Just craft.**
 
-[🌐 Live Demo](#) · [📬 Contact](https://www.linkedin.com/in/qasimakram) · [⭐ Star this repo](#)
+[🌐 Live Demo](https://mqasimakram.netlify.app/) · [📬 Contact](https://www.linkedin.com/in/qasimakram) · [⭐ Star this repo](#)
 
 </div>
 
@@ -17,8 +17,8 @@
 
 ## 📸 Preview
 
-> _Add a screenshot here — drag an image into the repo and update this line:_
-> `![Preview](preview.png)`
+<img width="1324" height="575" alt="Screenshot 2026-02-27 231757" src="https://github.com/user-attachments/assets/a074bf54-b3f9-4a5a-8347-a9c9c8380732" />
+
 
 ---
 
@@ -116,11 +116,10 @@ Copy this block inside the `#projects` section:
 ```
 
 ### 🔗 Update social links
-In the contact section, replace `your-handle` with your actual usernames:
 ```html
-<a href="https://instagram.com/your-handle" ...>Instagram</a>
-<a href="https://x.com/your-handle" ...>X / Twitter</a>
-<a href="https://medium.com/@your-handle" ...>Medium</a>
+<a href="https://instagram.com/m_qasimakram" ...>Instagram</a>
+<a href="https://x.com/Qasim_Akram46" ...>X / Twitter</a>
+<a href="https://medium.com/@qasimakram" ...>Medium</a>
 ```
 
 ### 📬 Make the contact form actually send emails
