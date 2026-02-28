@@ -48,7 +48,7 @@
       observer.observe(el);
     });
 
-    //Form 
+    
     function handleSubmit(e) {
       e.preventDefault();
       const btn = e.target.querySelector('.form-submit');
