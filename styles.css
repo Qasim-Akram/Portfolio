@@ -169,7 +169,7 @@
       animation: fadeIn 1.2s 1s forwards;
     }
 
-    /* Section base */
+    
     section { padding: 6rem 4rem; border-bottom: 1px solid var(--border); }
     .section-label {
       font-family: 'DM Mono', monospace;
@@ -187,7 +187,7 @@
       background: var(--border);
     }
 
-    /* About */
+  
     #about .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -271,7 +271,7 @@
       transition: background 0.2s;
     }
 
-    /* Projects */
+    
     #projects .projects-list { display: flex; flex-direction: column; }
     .project-item {
       display: grid;
