@@ -17,7 +17,7 @@
 
 ## Preview
 
-![img/image.png]()
+<img width="1324" height="575" alt="Screenshot 2026-02-27 231757" src="https://github.com/user-attachments/assets/a074bf54-b3f9-4a5a-8347-a9c9c8380732" />
 
 
 ---
