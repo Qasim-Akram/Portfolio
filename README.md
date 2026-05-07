@@ -1,4 +1,4 @@
-# 🧑‍💻 Muhammad Qasim Akram — Portfolio
+# Muhammad Qasim Akram — Portfolio
 
 <div align="center">
 
@@ -15,41 +15,42 @@
 
 ---
 
-## 📸 Preview
+## Preview
 
-<img width="1324" height="575" alt="Screenshot 2026-02-27 231757" src="https://github.com/user-attachments/assets/a074bf54-b3f9-4a5a-8347-a9c9c8380732" />
+![Uploading image.png…]()
 
-
----
-
-## ✨ Features
-
-- 🖱️ **Custom cursor** with a lagging ring effect and hover expansion
-- 🎞️ **Scroll-triggered animations** — sections fade up as you scroll into them
-- 🧊 **Frosted glass navbar** that stays fixed at the top
-- 📐 **Fully responsive** — works beautifully on mobile, tablet, and desktop
-- 📬 **Contact form** with submit feedback (no page reload)
-- 🔦 **Active nav highlighting** — shows which section you're in while scrolling
-- ⚡ **Zero dependencies** — pure vanilla HTML, CSS, JS
 
 ---
 
-## 🗂️ Project Structure
+## Features
+
+- Custom crosshair cursor with a smooth lagging dot — no generic circle ring
+- Hero section with photo, bold Bebas Neue typography, and letter-by-letter animation
+- Scrolling marquee tech stack strip between hero and about
+- Scroll-triggered reveal animations on all sections
+- Frosted glass navbar with active section highlighting and Hire Me button
+- Fully responsive across mobile, tablet, and desktop
+- Contact form with submit feedback and no page reload
+- Zero dependencies — pure vanilla HTML, CSS, JS
+
+---
+
+## Project Structure
 
 ```
 portfolio/
 │
-├── index.html          # All HTML structure
-├── style.css           # All styles (or embedded in index.html)
-├── script.js           # All JavaScript (or embedded in index.html)
-├── README.md           # You're reading this
-├── LICENSE             # MIT License
-└── .gitignore          # Files to ignore
+├── index.html        
+├── styles.css        
+├── script.js         
+├── img/
+│   └── profile.png   
+└── README.md         
 ```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
@@ -61,129 +62,118 @@ cd portfolio
 ### 2. Open in browser
 
 ```bash
-# Just open index.html directly — no build step needed!
 open index.html
-
-# Or use VS Code Live Server for hot reload
 ```
 
-> ✅ No npm install. No build process. Just open and go.
+No npm install. No build process. Just open and go.
 
 ---
 
-## 🎨 Design Decisions
+## Design Decisions
 
 | Choice | Reason |
 |---|---|
-| **DM Serif Display** for headings | Elegant, editorial feel — stands out from typical dev portfolios |
-| **DM Mono** for labels & nav | Techy, precise — nods to the engineering side |
-| **Off-white `#f5f5f0`** background | Warmer and easier on the eyes than pure white |
-| **Near-black `#0a0a0a`** text | Softer contrast than pure black |
-| **`clamp()` for font sizes** | Fluid typography — responsive without media queries |
-| **Custom cursor** | Immediately signals attention to detail |
-| **Full-bleed black contact section** | Creates a dramatic visual break at the end |
+| **Bebas Neue** for hero name | Bold, oversized editorial typography — commands attention immediately |
+| **DM Serif Display** for headings | Elegant contrast against the mono labels |
+| **DM Mono** for labels & nav | Precise, techy feel that nods to the engineering side |
+| **Off-white `#f2f0eb`** background | Warmer than pure white, easier on the eyes |
+| **Crosshair cursor** | Sharp and editorial — avoids the overused circle/ring cursor |
+| **Transparent photo in hero** | Clean floating appearance, no boxy container |
+| **Marquee strip** | Communicates tech stack at a glance without cluttering the hero |
+| **`clamp()` for font sizes** | Fluid typography — responsive without extra media queries |
 
 ---
 
-## 🛠️ Customization Guide
+## Customization Guide
 
-### 🔤 Change your name & info
-Open `index.html` and search for `Muhammad Qasim Akram` — update your name, tagline, and about section text.
+### Change your name & info
+Open `index.html` and search for `Muhammad Qasim` — update your name, tagline, and about section text.
 
-### 🎨 Change colors
-All colors are CSS variables at the top of the `<style>` tag:
+### Change colors
+All colors are CSS variables at the top of `styles.css`:
 ```css
 :root {
   --black: #0a0a0a;
-  --white: #f5f5f0;
-  --gray-500: #6a6a62;
+  --white: #f2f0eb;
+  --gray: #888;
+  --border: #d0cdc6;
 }
 ```
-Change these and the whole site updates instantly.
 
-### 📁 Add a new project
-Copy this block inside the `#projects` section:
+### Add a new project
+Copy this block inside the `#projects` section in `index.html`:
 ```html
-<a href="YOUR_GITHUB_LINK" target="_blank" class="project-row">
-  <span class="project-num">05</span>
+<a href="YOUR_GITHUB_LINK" target="_blank" class="project-item reveal">
+  <span class="project-num">006</span>
   <div class="project-info">
-    <div class="project-name">Project Name</div>
-    <div class="project-desc">Short description of what it does</div>
+    <span class="project-name">Project Name</span>
+    <span class="project-desc">Short description of what it does</span>
   </div>
-  <div class="project-tech">Tech<br />Stack</div>
+  <span class="project-tag">React · Node · MongoDB</span>
   <span class="project-arrow">↗</span>
 </a>
 ```
 
-### 🔗 Update social links
-```html
-<a href="https://instagram.com/m_qasimakram" ...>Instagram</a>
-<a href="https://x.com/Qasim_Akram46" ...>X / Twitter</a>
-<a href="https://medium.com/@qasimakram" ...>Medium</a>
-```
+### Update your photo
+Replace `img/profile.png` with your own transparent background PNG. Use [remove.bg](https://remove.bg) to remove the background for free.
 
-### 📬 Make the contact form actually send emails
-The form currently shows a visual confirmation only. To make it real, sign up at [EmailJS](https://www.emailjs.com/) or [Formspree](https://formspree.io/) and follow their docs to hook it up in ~10 lines of JS.
+### Make the contact form send real emails
+The form currently shows a visual confirmation only. To make it functional, sign up at [Formspree](https://formspree.io) and replace the `handleSubmit` function in `script.js` with their fetch call — takes about 10 lines.
 
 ---
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 | Screen | Layout |
 |---|---|
-| Desktop (> 768px) | Full two-column layouts, custom cursor, background "Q" visible |
-| Mobile (≤ 768px) | Single column, cursor hidden, decorative elements removed |
+| Desktop (> 1024px) | Two-column hero with photo, full nav with Hire Me button |
+| Tablet (768px – 1024px) | Single column hero, photo hidden, nav condensed |
+| Mobile (< 600px) | Single column, nav links hidden, project tags hidden |
 
 ---
 
-## 🧠 JavaScript Concepts Used
+## JavaScript Concepts Used
 
 | Feature | Technique |
 |---|---|
-| Custom cursor dot | `mousemove` event + `transform` |
-| Lagging cursor ring | `requestAnimationFrame` + lerp (linear interpolation) |
+| Crosshair cursor | `mousemove` + CSS `::before` / `::after` pseudo-elements |
+| Lagging dot | `requestAnimationFrame` + lerp interpolation |
+| Letter animation | Dynamic `innerHTML` span injection with staggered `transition-delay` |
 | Scroll reveal | `IntersectionObserver` API |
-| Active nav | `scroll` event + `offsetTop` comparison |
+| Active nav highlight | `scroll` event + `offsetTop` comparison |
 | Form feedback | `preventDefault` + `setTimeout` reset |
 
 ---
 
-## 🚢 Deploying
+## Deploying
 
-### Vercel (Recommended — free)
+### Netlify (Recommended)
 1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com) → New Project
+2. Go to [netlify.com](https://netlify.com) → New Site from Git
 3. Import your repo → Deploy
-4. Done! You get a live URL in ~30 seconds
+4. Live in ~30 seconds
 
-### GitHub Pages (Also free)
+### Vercel
+1. Go to [vercel.com](https://vercel.com) → New Project
+2. Import your GitHub repo → Deploy
+
+### GitHub Pages
 1. Go to your repo → Settings → Pages
 2. Set source to `main` branch → `/ (root)`
-3. Your site is live at `https://qasim-akram.github.io/portfolio`
-
-### Netlify
-1. Drag and drop your project folder at [netlify.com/drop](https://app.netlify.com/drop)
-2. Instant live URL — no account needed
+3. Live at `https://qasim-akram.github.io/portfolio`
 
 ---
 
-## 📄 License
+## License
 
-This project is open source under the [MIT License](LICENSE). Feel free to use it as a template — just give a ⭐ if it helped!
-
----
-
-## 🙏 Acknowledgements
-
-- Fonts by [Google Fonts](https://fonts.google.com/) — DM Serif Display, DM Mono, DM Sans
-- Inspired by editorial design and modern portfolio trends
+This project is open source under the [MIT License](LICENSE). Feel free to use it as a template — just drop a star if it helped.
 
 ---
 
 <div align="center">
 
-Built with ❤️ and zero dependencies by **Muhammad Qasim Akram**
+Built with zero dependencies by **Muhammad Qasim Akram**
 
-[⬆ Back to top](#)
+[Back to top](#)
 
 </div>
