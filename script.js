@@ -1,4 +1,3 @@
-
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -30,6 +29,31 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
+// ── HAMBURGER MENU ──
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+
+// Close menu when a nav link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
+// Close menu on outside click
+document.addEventListener('click', e => {
+  if (!navbar.contains(e.target)) {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+  }
+});
+
 // ── SCROLL REVEAL ──
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
@@ -53,8 +77,8 @@ document.querySelectorAll('.stack-category').forEach((el, i) => {
 const heroText = document.getElementById('heroText');
 if (heroText) {
   const text = heroText.textContent;
-  heroText.innerHTML = text.split('').map((char, i) => 
-    char === ' ' 
+  heroText.innerHTML = text.split('').map((char, i) =>
+    char === ' '
       ? '<span style="display:inline-block;width:0.3em"> </span>'
       : `<span style="display:inline-block;opacity:0;transform:translateY(40px);transition:opacity 0.5s ${0.35 + i * 0.025}s cubic-bezier(0.16,1,0.3,1),transform 0.5s ${0.35 + i * 0.025}s cubic-bezier(0.16,1,0.3,1)">${char}</span>`
   ).join('');

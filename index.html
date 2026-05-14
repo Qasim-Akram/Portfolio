@@ -8,7 +8,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
-    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -19,13 +19,21 @@
 
   <nav id="navbar">
     <a href="#hero" class="nav-logo">QA.</a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#stack">Stack</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-hire">Hire Me</a>
+    <div class="nav-ctas">
+      <a href="\img\Muhammad_QasimAkram(webupdated).pdf" target="_blank" rel="noopener noreferrer" class="nav-resume">
+        Resume
+      </a>
+      <a href="#contact" class="nav-hire">Hire Me</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <section id="hero">
@@ -213,7 +221,7 @@
         <span class="project-arrow">↗</span>
       </a>
 
-        <a href="https://github.com/Qasim-Akram/DevChat" target="_blank" class="project-item reveal">
+      <a href="https://github.com/Qasim-Akram/DevChat" target="_blank" class="project-item reveal">
         <span class="project-num">003</span>
         <div class="project-info">
           <span class="project-name">AI Chat Assistant for Developer</span>
@@ -243,12 +251,10 @@
         <span class="project-tag">SQL · Database Design</span>
         <span class="project-arrow">↗</span>
       </a>
-    
 
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-left reveal">
       <p class="section-label">Contact</p>
