@@ -27,21 +27,24 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('active', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
 mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
   });
 });
 
 document.addEventListener('click', e => {
   if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-    hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
   }
 });
 
@@ -55,7 +58,6 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.08 });
-
 reveals.forEach(el => observer.observe(el));
 
 document.querySelectorAll('.stack-category').forEach((el, i) => {
@@ -70,7 +72,6 @@ if (heroText) {
       ? '<span style="display:inline-block;width:0.3em"> </span>'
       : `<span style="display:inline-block;opacity:0;transform:translateY(40px);transition:opacity 0.5s ${0.35 + i * 0.025}s cubic-bezier(0.16,1,0.3,1),transform 0.5s ${0.35 + i * 0.025}s cubic-bezier(0.16,1,0.3,1)">${char}</span>`
   ).join('');
-
   requestAnimationFrame(() => {
     heroText.querySelectorAll('span').forEach(span => {
       span.style.opacity = '1';
@@ -84,7 +85,6 @@ function handleSubmit(e) {
   const btn = e.target.querySelector('.form-submit');
   btn.textContent = 'Sending...';
   btn.disabled = true;
-
   emailjs.sendForm('portfolio_contack', 'template_mkyegym', e.target)
     .then(() => {
       btn.textContent = 'Message Sent ✓';
@@ -105,7 +105,6 @@ function handleSubmit(e) {
 
 const sections = document.querySelectorAll('section[id]');
 const pillLinks = document.querySelectorAll('.pill-nav a');
-
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => {
