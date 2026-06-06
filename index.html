@@ -10,6 +10,8 @@
     rel="stylesheet" />
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("yCgwIWXoWe_klsqNy")</script>
 </head>
 
 <body>
@@ -222,8 +224,8 @@
           <span class="project-tag">React · Node · Ollma3</span>
           <span class="project-arrow">↗</span>
         </a>
- 
-         <a href="https://github.com/Qasim-Akram/EyeSpy" target="_blank" class="project-item reveal">
+
+        <a href="https://github.com/Qasim-Akram/EyeSpy" target="_blank" class="project-item reveal">
           <span class="project-num">003</span>
           <div class="project-info">
             <span class="project-name">EyeSpy-Blind Assistance System</span>
@@ -245,7 +247,7 @@
           <span class="project-arrow">↗</span>
         </a>
 
-       
+
 
         <a href="https://github.com/Qasim-Akram/Stock-Price-Prediction" target="_blank" class="project-item reveal">
           <span class="project-num">005</span>
@@ -286,15 +288,16 @@
       <form class="contact-form" onsubmit="handleSubmit(event)">
         <div class="form-group">
           <label class="form-label">Name</label>
-          <input type="text" class="form-input" placeholder="Your name" required />
+          <input type="text" class="form-input" name="from_name" placeholder="Your name" required />
         </div>
         <div class="form-group">
           <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="your@email.com" required />
+          <input type="email" class="form-input" name="from_email" placeholder="your@email.com" required />
         </div>
         <div class="form-group">
           <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about your project or opportunity..."></textarea>
+          <textarea class="form-textarea" name="message"
+            placeholder="Tell me about your project or opportunity..."></textarea>
         </div>
         <button type="submit" class="form-submit">Send Message →</button>
       </form>

@@ -23,13 +23,13 @@ document.querySelectorAll('a, button').forEach(el => {
   el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
 });
 
-// ── NAV SCROLL STATE ──
+
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// ── HAMBURGER MENU ──
+
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
@@ -38,7 +38,7 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Close menu when a nav link is clicked
+
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
@@ -46,7 +46,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Close menu on outside click
+
 document.addEventListener('click', e => {
   if (!navbar.contains(e.target)) {
     hamburger.classList.remove('open');
@@ -54,7 +54,6 @@ document.addEventListener('click', e => {
   }
 });
 
-// ── SCROLL REVEAL ──
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
   entries.forEach((entry, i) => {
@@ -68,12 +67,11 @@ const observer = new IntersectionObserver(entries => {
 
 reveals.forEach(el => observer.observe(el));
 
-// Stagger children in stack grid
+
 document.querySelectorAll('.stack-category').forEach((el, i) => {
   el.style.transitionDelay = `${i * 60}ms`;
 });
 
-// ── HERO TEXT SPLIT ANIMATION (letter by letter) ──
 const heroText = document.getElementById('heroText');
 if (heroText) {
   const text = heroText.textContent;
@@ -91,22 +89,32 @@ if (heroText) {
   });
 }
 
-// ── CONTACT FORM ──
+
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Message Sent ✓';
-  btn.style.background = 'transparent';
-  btn.style.color = 'var(--black)';
-  setTimeout(() => {
-    btn.textContent = 'Send Message →';
-    btn.style.background = 'var(--black)';
-    btn.style.color = 'var(--white)';
-    e.target.reset();
-  }, 3000);
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  emailjs.sendForm('portfolio_contack', 'template_mkyegym', e.target)
+    .then(() => {
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = 'transparent';
+      btn.style.color = 'var(--black)';
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = 'var(--black)';
+        btn.style.color = 'var(--white)';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    }, () => {
+      btn.textContent = 'Failed. Try again.';
+      btn.disabled = false;
+    });
 }
 
-// ── SMOOTH ACTIVE NAV HIGHLIGHT ──
+
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
