@@ -19,26 +19,33 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <nav id="navbar">
-    <a href="#hero" class="nav-logo">QA.</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-ctas">
-      <a href="\img\Muhammad_Qasim_Akram_software_engineer.pdf" target="_blank" rel="noopener noreferrer"
-        class="nav-resume">
-        Resume
-      </a>
-      <a href="#contact" class="nav-hire">Hire Me</a>
-    </div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+  <a href="#hero" class="nav-logo-fixed">QA.</a>
+
+  <nav class="pill-nav" id="pillNav">
+    <a href="#about">About</a>
+    <a href="#stack">Stack</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </nav>
+
+  <div class="old-nav-ctas">
+    <a href="img/Muhammad_Qasim_Akram_software_engineer.pdf" target="_blank" rel="noopener noreferrer"
+      class="nav-resume">Resume</a>
+    <a href="#contact" class="nav-hire">Hire Me</a>
+  </div>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#stack">Stack</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
 
   <section id="hero">
     <div class="hero-left">
@@ -59,7 +66,6 @@
         <span class="scroll-text">Scroll down</span>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="hero-img-wrap">
         <img src="img/profile.png" alt="Muhammad Qasim" class="hero-photo" id="heroPhoto"
@@ -87,7 +93,7 @@
       <span>Django</span><span>·</span>
       <span>Express</span><span>·</span>
       <span>Azure</span><span>·</span>
-      <span>CI/CD </span><span>·</span>
+      <span>CI/CD</span><span>·</span>
       <span>React</span><span>·</span>
       <span>Node.js</span><span>·</span>
       <span>Python</span><span>·</span>
@@ -126,15 +132,15 @@
           </div>
           <div class="fact">
             <div class="fact-num">10+</div>
-            <div class="fact-label">Languages</div>
+            <div class="fact-label">GitHub Repos</div>
           </div>
           <div class="fact">
             <div class="fact-num">3</div>
             <div class="fact-label">Tech Domains</div>
           </div>
           <div class="fact">
-            <div class="fact-num">6th</div>
-            <div class="fact-label">Semester</div>
+            <div class="fact-num">2+</div>
+            <div class="fact-label">Years Building</div>
           </div>
         </div>
       </div>
@@ -208,58 +214,57 @@
       <a href="https://github.com/Qasim-Akram/ChatRoom" target="_blank" class="project-item reveal">
         <span class="project-num">001</span>
         <div class="project-info">
-          <span class="project-name">ChatRoom-RealTime Chat Application</span>
-          <span class="project-desc">ChatRoom is a real-time chat application where users can register, log in, create
-            chat rooms, and send messages that appear instantly on everyone's screen without refreshing the page</span>
+          <span class="project-name">ChatRoom — Real-Time Chat App</span>
+          <span class="project-desc">Users register, create rooms, and send messages that appear instantly — no refresh
+            needed.</span>
         </div>
         <span class="project-tag">React · Django · WebSocket</span>
         <span class="project-arrow">↗</span>
+      </a>
 
-        <a href="https://github.com/Qasim-Akram/DevChat" target="_blank" class="project-item reveal">
-          <span class="project-num">002</span>
-          <div class="project-info">
-            <span class="project-name">AI Chat Assistant for Developer</span>
-            <span class="project-desc">LLM-powered conversational interface with context memory and streaming
-              responses</span>
-          </div>
-          <span class="project-tag">React · Node · Ollma3</span>
-          <span class="project-arrow">↗</span>
-        </a>
+      <a href="https://github.com/Qasim-Akram/DevChat" target="_blank" class="project-item reveal">
+        <span class="project-num">002</span>
+        <div class="project-info">
+          <span class="project-name">DevChat — AI Chat Assistant</span>
+          <span class="project-desc">LLM-powered conversational interface with context memory and streaming
+            responses.</span>
+        </div>
+        <span class="project-tag">React · Node · LLaMA 3</span>
+        <span class="project-arrow">↗</span>
+      </a>
 
-        <a href="https://github.com/Qasim-Akram/EyeSpy" target="_blank" class="project-item reveal">
-          <span class="project-num">003</span>
-          <div class="project-info">
-            <span class="project-name">EyeSpy-Blind Assistance System</span>
-            <span class="project-desc">A real-time object detection system that helps visually impaired individuals
-              navigate their surroundings using audio feedback.</span>
-          </div>
-          <span class="project-tag">Python · OpenCV · Yolov8</span>
-          <span class="project-arrow">↗</span>
-        </a>
+      <a href="https://github.com/Qasim-Akram/EyeSpy" target="_blank" class="project-item reveal">
+        <span class="project-num">003</span>
+        <div class="project-info">
+          <span class="project-name">EyeSpy — Blind Assistance System</span>
+          <span class="project-desc">Real-time object detection with audio feedback to help visually impaired users
+            navigate.</span>
+        </div>
+        <span class="project-tag">Python · OpenCV · YOLOv8</span>
+        <span class="project-arrow">↗</span>
+      </a>
 
-        <a href="https://github.com/Qasim-Akram/yourOwn-Ecommerce-store" target="_blank" class="project-item reveal">
-          <span class="project-num">004</span>
-          <div class="project-info">
-            <span class="project-name">YOUROWN - E-Commerce Platform</span>
-            <span class="project-desc">Full React storefront with clean component architecture, cart system & responsive
-              design</span>
-          </div>
-          <span class="project-tag">React · Node · MongoDB</span>
-          <span class="project-arrow">↗</span>
-        </a>
+      <a href="https://github.com/Qasim-Akram/yourOwn-Ecommerce-store" target="_blank" class="project-item reveal">
+        <span class="project-num">004</span>
+        <div class="project-info">
+          <span class="project-name">YOUROWN — E-Commerce Platform</span>
+          <span class="project-desc">Full storefront with cart, JWT auth, order tracking, and CI/CD deployment on
+            Azure.</span>
+        </div>
+        <span class="project-tag">React · Node · MongoDB</span>
+        <span class="project-arrow">↗</span>
+      </a>
 
-
-
-        <a href="https://github.com/Qasim-Akram/Stock-Price-Prediction" target="_blank" class="project-item reveal">
-          <span class="project-num">005</span>
-          <div class="project-info">
-            <span class="project-name">AI Powered Stock Predictor</span>
-            <span class="project-desc">LLaMA-powered stock price prediction with real-time AI-driven insights and clean
-              UI</span>
-          </div>
-          <span class="project-tag">Express.js · Groq · JS</span>
-          <span class="project-arrow">↗</span>
-        </a>
+      <a href="https://github.com/Qasim-Akram/Stock-Price-Prediction" target="_blank" class="project-item reveal">
+        <span class="project-num">005</span>
+        <div class="project-info">
+          <span class="project-name">Minimal Analysis — AI Stock Predictor</span>
+          <span class="project-desc">LLaMA-powered stock price prediction with real-time AI-driven insights and clean
+            UI.</span>
+        </div>
+        <span class="project-tag">Express.js · Groq · JS</span>
+        <span class="project-arrow">↗</span>
+      </a>
 
     </div>
   </section>
@@ -269,8 +274,8 @@
     <div class="services-grid">
 
       <div class="service-card reveal">
-        <div class="service-num">01</div>
-        <div class="service-content">
+        <div class="service-card-inner">
+          <div class="service-num">01</div>
           <h3 class="service-title">Full Stack Web Development</h3>
           <p class="service-desc">End-to-end web apps — React frontend, Node or Django backend, database, auth, deployed
             and live. Not just a pretty UI, the whole thing.</p>
@@ -281,8 +286,8 @@
       </div>
 
       <div class="service-card reveal">
-        <div class="service-num">02</div>
-        <div class="service-content">
+        <div class="service-card-inner">
+          <div class="service-num">02</div>
           <h3 class="service-title">REST API Design & Development</h3>
           <p class="service-desc">Clean, structured APIs that are easy to consume and scale. JWT auth, proper error
             handling, documented endpoints.</p>
@@ -293,8 +298,8 @@
       </div>
 
       <div class="service-card reveal">
-        <div class="service-num">03</div>
-        <div class="service-content">
+        <div class="service-card-inner">
+          <div class="service-num">03</div>
           <h3 class="service-title">Real-time Features</h3>
           <p class="service-desc">Live chat, instant notifications, real-time updates — built with WebSockets and Redis.
             Most devs avoid this. I've shipped it.</p>
@@ -305,8 +310,8 @@
       </div>
 
       <div class="service-card reveal">
-        <div class="service-num">04</div>
-        <div class="service-content">
+        <div class="service-card-inner">
+          <div class="service-num">04</div>
           <h3 class="service-title">AI & LLM Integration</h3>
           <p class="service-desc">Adding real AI into your product — chatbots, intelligent search, LLM-powered features.
             Not wrappers around ChatGPT, actual integration into your stack.</p>
@@ -316,14 +321,16 @@
         </div>
       </div>
 
-      <div class="service-card reveal">
-        <div class="service-num">05</div>
-        <div class="service-content">
-          <h3 class="service-title">Deployment & CI/CD Setup</h3>
-          <p class="service-desc">Get your app off localhost. I set up hosting, environment configs, and automated
-            pipelines so every push to main goes live without touching a server.</p>
+      <div class="service-card service-card--full reveal">
+        <div class="service-card-inner">
+          <div class="service-left">
+            <div class="service-num">05</div>
+            <h3 class="service-title">Deployment & CI/CD Setup</h3>
+            <p class="service-desc">Get your app off localhost. I set up hosting, environment configs, and automated
+              pipelines so every push to main goes live without touching a server.</p>
+          </div>
           <div class="service-tags">
-            <span>Azure</span><span>Railway</span><span>Vercel</span><span>GitHub Actions</span>
+            <span>Azure</span><span>Railway</span><span>Vercel</span><span>GitHub Actions</span><span>Netlify</span>
           </div>
         </div>
       </div>

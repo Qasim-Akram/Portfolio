@@ -23,34 +23,25 @@ document.querySelectorAll('a, button').forEach(el => {
   el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
 });
 
-
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-
 const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
+const mobileMenu = document.getElementById('mobileMenu');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
 });
 
-
-navLinks.querySelectorAll('a').forEach(link => {
+mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
+    mobileMenu.classList.remove('open');
   });
 });
 
-
 document.addEventListener('click', e => {
-  if (!navbar.contains(e.target)) {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
     hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
+    mobileMenu.classList.remove('open');
   }
 });
 
@@ -66,7 +57,6 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 
 reveals.forEach(el => observer.observe(el));
-
 
 document.querySelectorAll('.stack-category').forEach((el, i) => {
   el.style.transitionDelay = `${i * 60}ms`;
@@ -88,7 +78,6 @@ if (heroText) {
     });
   });
 }
-
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -114,15 +103,15 @@ function handleSubmit(e) {
     });
 }
 
-
 const sections = document.querySelectorAll('section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a');
+const pillLinks = document.querySelectorAll('.pill-nav a');
+
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => {
     if (window.scrollY >= s.offsetTop - 120) current = s.id;
   });
-  navAnchors.forEach(a => {
-    a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--black)' : '';
+  pillLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
   });
 });
